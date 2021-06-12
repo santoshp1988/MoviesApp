@@ -29,6 +29,8 @@ namespace MoviesService
         {
             services.AddCors();
             services.AddControllers();
+            services.AddSwaggerGen();
+
             services.AddScoped<IMovieManager, MovieManager>();
             services.AddScoped<IMovieDataManager, MovieDataManager>();
         }
@@ -45,6 +47,12 @@ namespace MoviesService
     .AllowAnyMethod()
     .AllowAnyHeader());
 
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Movies Service");
+            });
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -55,6 +63,7 @@ namespace MoviesService
             {
                 endpoints.MapControllers();
             });
+            
         }
     }
 }
