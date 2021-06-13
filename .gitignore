@@ -1,5 +1,22 @@
+#.net file
 *.suo
 *.user
 bin
 obj
 packages
+
+#React files
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
+node_modules
+bower_components
+
+*.sublime*
+
+psd
+thumb
+sketch

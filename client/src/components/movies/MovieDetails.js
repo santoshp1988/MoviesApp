@@ -54,8 +54,8 @@ function MovieDetails() {
                     <Grid align="center" item xs="12" lg="4">
                         <img className={classes.image} src={movieDetails.poster} alt={movieDetails.title} />
                     </Grid>
-                    <Grid item xs="12" lg="8">
-                        <Typography variant="subtitle" gutterBottom>
+                    <Grid item xs={12} lg={8}>
+                        <Typography variant="subtitle1" gutterBottom>
                             {movieDetails.plot}
                         </Typography>
                         <List>

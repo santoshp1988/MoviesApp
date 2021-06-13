@@ -1,11 +1,14 @@
 import './App.css';
 import '@fontsource/roboto';
 import MoviesContainer from './components/movies/MoviesContainer';
+import { MoviesProvider } from './contexts/MoviesContext';
 
 function App() {
   return (
     <div className="App">
-      <MoviesContainer />
+      <MoviesProvider>
+        <MoviesContainer />
+      </MoviesProvider>
     </div>
   );
 }

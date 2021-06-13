@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Movie from './Movie';
 import { Container } from '@material-ui/core';
+import { MoviesContext } from '../../contexts/MoviesContext';
 
-export default function MovieList(props) {
-    const { movies } = props;
+export default function MovieList() {
+    const { movies } = useContext(MoviesContext);
     if (!movies) return null;
+
     return (
         <Container>
             { (movies.length > 0) ?

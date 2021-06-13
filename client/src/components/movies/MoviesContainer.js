@@ -1,6 +1,6 @@
 import React from 'react';
 import MovieList from './MovieList';
-import { useEffect, useState } from 'react';
+import { useEffect, useContext } from 'react';
 import { getAllMovies } from '../../services/MoviesService';
 import {
     BrowserRouter as Router,
@@ -9,11 +9,13 @@ import {
 } from "react-router-dom";
 import MovieDetails from '../movies/MovieDetails';
 import { Container } from '@material-ui/core';
+import FilterSet from './FilterSet';
+import { MoviesContext, MoviesProvider } from '../../contexts/MoviesContext';
 
 function MoviesContainer(props) {
-    const [movies, setMovies] = useState();
+    const { setAllMovies } = useContext(MoviesContext);
     useEffect(() => {
-        getAllMovies().then(movies => setMovies(movies));
+        getAllMovies().then(movies => { setAllMovies(movies); });
     }, []);
 
     return (
@@ -21,7 +23,8 @@ function MoviesContainer(props) {
             <Router>
                 <Switch>
                     <Route exact path="/">
-                        <MovieList movies={movies}></MovieList>
+                        <FilterSet />
+                        <MovieList />
                     </Route>
                     <Route path="/movie/:id">
                         <MovieDetails></MovieDetails>

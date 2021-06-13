@@ -8,7 +8,9 @@ const getAllMovies = async () => {
         title: x.title,
         image: x.poster,
         rating: x.rating,
-        imdbID: x.id
+        imdbID: x.id,
+        language: x.language,
+        location: x.location
     }));
 }
 
