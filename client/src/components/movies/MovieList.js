@@ -5,9 +5,10 @@ import { Container } from '@material-ui/core';
 
 export default function MovieList(props) {
     const { movies } = props;
+    if (!movies) return null;
     return (
         <Container>
-            { (movies && movies.length > 0) ?
+            { (movies.length > 0) ?
                 (<Grid container justify="space-evenly" spacing={5}>
                     {
                         movies.map(movie => (<Grid key={movie.imdbID} item>
