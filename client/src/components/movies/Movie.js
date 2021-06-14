@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Grid, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
+import { Card, Grid, ListItem, ListItemText } from '@material-ui/core';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';

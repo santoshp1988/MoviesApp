@@ -10,7 +10,7 @@ import {
 import MovieDetails from '../movies/MovieDetails';
 import { Container } from '@material-ui/core';
 import FilterSet from './FilterSet';
-import { MoviesContext, MoviesProvider } from '../../contexts/MoviesContext';
+import { MoviesContext } from '../../contexts/MoviesContext';
 
 function MoviesContainer(props) {
     const { setAllMovies } = useContext(MoviesContext);
